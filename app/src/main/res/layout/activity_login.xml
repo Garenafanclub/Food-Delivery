@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,19 +8,21 @@
     android:background="@color/white"
     tools:context=".Activity.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation"
-        android:layout_width="250dp"
-        android:layout_height="280dp"
+        android:layout_width="245dp"
+        android:layout_height="270dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -27,6 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.033"
         app:lottie_autoPlay="true"
+        android:layout_gravity="center"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/login_animation"
         tools:ignore="MissingConstraints" />
@@ -60,12 +64,14 @@
             android:background="@drawable/edittext_background"
             android:drawableLeft="@drawable/baseline_email_24"
             android:ems="10"
-            android:hint="  example@gmail.com"
             android:inputType="textPersonName"
+            android:autofillHints="emailAddress"
+            android:hint="  xyz@gmail.com"
             android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
+            android:textColor="#2E2B2B"
+            android:textColorHint="#908E8E8E"
             android:textSize="18sp" />
+
 
         <TextView
             android:id="@+id/Password_Login"
@@ -88,19 +94,33 @@
             app:placeholderText=""
             android:inputType="textPassword"
             app:passwordToggleEnabled="true"
-            android:hint="  **********"
+            android:autofillHints="password"
+            android:hint="  ********"
             android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
+            android:textColor="#000000"
+            android:textColorHint="#758E8E8E"
             android:textSize="18sp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/ForgetPass_Login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forget your password? Recovery it"
+            android:text="Forget your password?"
             android:textColor="#4d4d4d" />
+
+            <TextView
+                android:id="@+id/Recovery_your_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Recovery it"
+                android:textColor="#4d4d4d"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,38 +159,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/Google_Button"
-                style="@android:style/Widget.Button"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/background_buttton_social"
-                android:drawableStart="@drawable/google_button"
-                android:padding="16dp"
-                android:text="Google"
-                android:textColor="#6740AC"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/google_image_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="11dp"
+                android:background="@drawable/google"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/Facebook_Button"
-                style="@android:style/Widget.Button"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/background_buttton_social"
-                android:drawableStart="@drawable/phonepic"
-                android:drawablePadding="0dp"
-                android:padding="16dp"
-                android:text="PhoneAuth"
-                android:textColor="#6740AC"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/facebook_image_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="90dp"
+                android:background="@drawable/facebook"/>
+
+            <ImageButton
+                android:id="@+id/twitter_image_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="90dp"
+                android:background="@drawable/twitter"/>
+
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -178,16 +190,17 @@
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="55dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="25dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/login_page_button"
-            android:text="SignUp"
+            android:text="Login"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

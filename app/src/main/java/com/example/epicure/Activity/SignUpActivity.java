@@ -7,26 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
 import com.example.epicure.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
-    Button button;
+    Button SignUp_Button_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
+        SignUp_Button_page = findViewById(R.id.SignUp_Button_page);
 
-        button = findViewById(R.id.SignUp_Button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        SignUp_Button_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Patience is delicious. (Soon!)", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),Main_DashBoard.class));
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
+
 }

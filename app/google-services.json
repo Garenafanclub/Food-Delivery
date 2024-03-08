@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "978951774440",
+    "project_id": "epicure-cdc71",
+    "storage_bucket": "epicure-cdc71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978951774440:android:39e4ce8647c38279f1a95d",
+        "android_client_info": {
+          "package_name": "com.example.epicure"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrKJlkle6uJlY9w3nnF4lDWpTzo54HHyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
