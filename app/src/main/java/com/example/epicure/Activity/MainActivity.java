@@ -1,91 +1,67 @@
 package com.example.epicure.Activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.ComponentActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.epicure.R;
 
-public class MainActivity extends ComponentActivity {
+public class MainActivity extends FireBaseActivity {
 
     private MainViewModel viewModel;
-    View button;
-    TextView login_text , Signup_text;
+    private final int colorChangeInterval = 2000;
+    TextView recipe_button;
+    private final Handler handler = new Handler(Looper.getMainLooper());
+
+    private final int[] colors = new int[]
+            {
+                    R.color.button_pressed_color, // Optional for pressed state (defined in color resource)
+                    R.color.button_default_color  // Optional for default state (defined in color resource)
+            };
+    private int colorIndex = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Use SplashScreen.Companion.installSplashScreen
         SplashScreen splashScreen = SplashScreen.Companion.installSplashScreen(this);
-
         splashScreen.setKeepOnScreenCondition(() -> !viewModel.isReady.getValue());
-
-//        splashScreen.setOnExitAnimationListener(screen -> {
-//            ObjectAnimator zoomX = ObjectAnimator.ofFloat(
-//                    screen.getIconView(),
-//                    View.SCALE_X,
-//                    0.6f,
-//                    0.0f
-//            );
-//            zoomX.setInterpolator(new OvershootInterpolator());
-//            zoomX.setDuration(500L);
-//            zoomX.addListener(new AnimatorListenerAdapter() {
-//                @Override
-//                public void onAnimationEnd(Animator animation) {
-//                    screen.remove();
-//                }
-//            });
-//
-//            ObjectAnimator zoomY = ObjectAnimator.ofFloat(
-//                    screen.getIconView(),
-//                    View.SCALE_Y,
-//                    0.6f,
-//                    0.0f
-//            );
-//            zoomY.setInterpolator(new OvershootInterpolator());
-//            zoomY.setDuration(500L);
-//            zoomY.addListener(new AnimatorListenerAdapter() {
-//                @Override
-//                public void onAnimationEnd(Animator animation) {
-//                    screen.remove();
-//                }
-//            });
-//
-//            zoomX.start();
-//            zoomY.start();
-//        });
-
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         setContentView(R.layout.activity_main);
+        startColorChangeTask();
 
-        login_text = findViewById(R.id.login_text);
-        Signup_text = findViewById(R.id.sign_in_text);
-        login_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            }
-        });
+        recipe_button = findViewById(R.id.recipe_button);
+        recipe_button.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),Before_MainActivity.class)));
+    }
 
-        Signup_text.setOnClickListener(new View.OnClickListener() {
+    private void startColorChangeTask() {
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Epicure is yours to explore!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            public void run() {
+                // Update button color based on index
+                int color = ContextCompat.getColor(MainActivity.this, colors[colorIndex]);
+                recipe_button.setBackgroundTintList(ColorStateList.valueOf(color));
+
+                // Update color index for next iteration
+                colorIndex = (colorIndex + 1) % colors.length;
+
+                // Schedule the next color change
+                handler.postDelayed(this, colorChangeInterval);
             }
-        });
+        }, colorChangeInterval);
+        }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Remove any pending tasks when activity is destroyed
+        handler.removeCallbacksAndMessages(null);
     }
 }

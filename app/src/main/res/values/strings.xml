@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Epicure</string>
+    <string name="string_title_signup">Creating Account..</string>
+    <string name="string_message_signup">This might take a few moments.</string>
+    <string name="string_title_login">Processing...</string>
+    <string name="string_message_login">Fetching your data</string>
+
 </resources>

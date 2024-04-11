@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:gravity="center">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation"
@@ -44,7 +45,9 @@
         android:padding="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="center"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/Email_Login"
@@ -64,7 +67,6 @@
             android:background="@drawable/edittext_background"
             android:drawableLeft="@drawable/baseline_email_24"
             android:ems="10"
-            android:inputType="textPersonName"
             android:autofillHints="emailAddress"
             android:hint="  xyz@gmail.com"
             android:padding="8dp"
@@ -101,6 +103,7 @@
             android:textColorHint="#758E8E8E"
             android:textSize="18sp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,9 +121,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" Recovery it"
-                android:textColor="#4d4d4d"/>
+                android:textColor="#131313"
+                android:textStyle="bold"/>
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,37 +159,36 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/google_image_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="11dp"
-                android:background="@drawable/google"/>
-
+                android:layout_marginTop="13dp"
+                android:background="@drawable/google_main" />
             <ImageButton
                 android:id="@+id/facebook_image_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="90dp"
-                android:background="@drawable/facebook"/>
-
+                android:layout_marginStart="83dp"
+                android:background="@drawable/facebook_photo"/>
             <ImageButton
                 android:id="@+id/twitter_image_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="90dp"
-                android:background="@drawable/twitter"/>
+                android:layout_marginStart="85dp"
+                android:background="@drawable/instagram"/>
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/SignUp_Button"
+            android:id="@+id/login_Button"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="55dp"
@@ -204,3 +206,19 @@
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<ProgressBar-->
+<!--android:id="@+id/progressBar_login"-->
+<!--android:layout_width="50dp"-->
+<!--android:layout_height="50dp"-->
+<!--android:indeterminate="false"-->
+<!--android:progressDrawable="@drawable/circular_progress_bar"-->
+<!--android:background="@drawable/circle_shape"-->
+<!--style="?android:attr/progressBarStyleHorizontal"-->
+<!--app:layout_constraintBottom_toBottomOf="parent"-->
+<!--app:layout_constraintTop_toTopOf="parent"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--android:visibility="gone"-->
+<!--android:max="100"-->
+<!--android:progress="50" />-->

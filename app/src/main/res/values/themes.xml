@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Epicure.Starting" parent="Theme.SplashScreen">
         <!--        <item name="windowSplashScreenBackground">@color/black</item>-->
-        <item name="android:windowBackground">@drawable/background_image_splash</item>
+        <item name="android:windowBackground">@color/red</item>
         <item name="postSplashScreenTheme">@style/Theme.Epicure</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/animated_logo</item>
     </style>
@@ -17,7 +17,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
-        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
