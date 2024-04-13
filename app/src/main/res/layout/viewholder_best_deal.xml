@@ -6,7 +6,7 @@
     android:layout_height="290dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:layout_margin="8dp"
+    android:layout_margin="7dp"
     app:cardCornerRadius="15dp"
     app:cardElevation="3dp">
 
@@ -19,6 +19,7 @@
             android:id="@+id/picFood"
             android:layout_width="0dp"
             android:layout_height="200dp"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
                 android:id="@+id/titleTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="title"
                 android:textColor="@color/blue_grey"

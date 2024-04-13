@@ -3,6 +3,7 @@ package com.example.epicure.Adaptor;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,11 @@ public class BestFoodsAdapter extends RecyclerView.Adapter<BestFoodsAdapter.view
         Glide.with(context)
                 .load(items.get(position).getImagePath())
                 .transform(new CenterCrop() , new RoundedCorners(30))
+                .fitCenter()
+                .error(R.drawable.chicken) // Placeholder or error image
                 .into(holder.pic);
+
+        System.out.println("MAYANKBASNAL..........................." + items.get(position).getImagePath());
     }
 
     @Override

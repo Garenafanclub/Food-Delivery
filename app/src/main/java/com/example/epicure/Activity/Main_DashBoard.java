@@ -144,7 +144,7 @@ public class Main_DashBoard extends FireBaseActivity {
                     if(list.size()>0)
                     {
                         MainBinding.categoryView.setLayoutManager(new GridLayoutManager(Main_DashBoard.this,4));
-                        RecyclerView.Adapter adapter = new CategoryAdapter(list);  // see video...
+                        RecyclerView.Adapter<CategoryAdapter.viewholder> adapter = new CategoryAdapter(list);  // see video...
                         MainBinding.categoryView.setAdapter(adapter);
                     }
                     MainBinding.progressBarCategory.setVisibility(View.GONE);
