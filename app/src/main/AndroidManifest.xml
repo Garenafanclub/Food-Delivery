@@ -15,9 +15,17 @@
         android:theme="@style/Theme.Epicure.Starting"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Forgot_password"
+            android:name=".Activity.DetailedActivity"
             android:exported="false"
             android:theme="@style/Theme.Epicure"/>
+        <activity
+            android:name=".Activity.ListFoodsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Epicure" />
+        <activity
+            android:name=".Activity.Forgot_password"
+            android:exported="false"
+            android:theme="@style/Theme.Epicure" />
         <activity
             android:name=".Activity.FireBaseActivity"
             android:exported="false"
@@ -29,8 +37,7 @@
         <activity
             android:name=".Activity.Main_DashBoard"
             android:exported="false"
-            android:theme="@style/Theme.Epicure">
-        </activity>
+            android:theme="@style/Theme.Epicure" />
         <activity
             android:name=".Activity.SignUpActivity"
             android:exported="false"

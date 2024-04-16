@@ -2,6 +2,8 @@ package com.example.epicure.Adaptor;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +12,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.example.epicure.Activity.ListFoodsActivity;
 import com.example.epicure.Domain.Category;
-import com.example.epicure.Domain.Foods;
 import com.example.epicure.R;
 
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
 
     @SuppressLint("SetTextI18n") // your choice...
     @Override
-    public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.titleTxt.setText(items.get(position).getName());
         switch (position)
@@ -83,6 +82,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.pic);
+
+
+        holder.itemView.setOnClickListener(view -> {
+            int categoryId = items.get(position).getId();
+            Log.d("CategoryAdapter", "Category ID clicked: " + categoryId); // Add this line
+            Intent intent = new Intent(context, ListFoodsActivity.class);
+            intent.putExtra("CategoryId",categoryId);
+            Log.d("ListFoodsActivity", "Category ID: " + categoryId);
+            intent.putExtra("CategoryName",items.get(position).getName());
+            context.startActivity(intent);
+        });
     }
 
     @Override

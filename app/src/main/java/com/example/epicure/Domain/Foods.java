@@ -1,10 +1,12 @@
 package com.example.epicure.Domain;
 
-public class Foods {
+import java.io.Serializable;
+
+public class Foods implements Serializable {
     private int CategoryId;
     private String ImagePath;
     private boolean BestFood;
-    private int id;
+    private int Id;
     private int LocationId;
     private double Price;
     private String Description;
@@ -14,6 +16,7 @@ public class Foods {
     private int TimeValue;
     private String Title;
     private int numberInCart;
+
 
     public Foods() {
     }
@@ -48,11 +51,11 @@ public class Foods {
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     public int getLocationId() {

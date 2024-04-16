@@ -56,6 +56,7 @@ public class Main_DashBoard extends FireBaseActivity {
         initPrice();
         initBestFood();
         initCategory();
+        setVariable();
 
         userName = findViewById(R.id.user_name_fetch);
 
@@ -72,7 +73,9 @@ public class Main_DashBoard extends FireBaseActivity {
         } else {
             displayLoginRequiredMessage();
         }
+    }
 
+    private void setVariable() {
         // LOG OUT FROM BOTH GOOGLE AS WELL AS EMAIL...
         MainBinding.logOut.setOnClickListener(view -> {
             mGoogleSignInClient.signOut().addOnCompleteListener(this, task -> {
@@ -94,6 +97,21 @@ public class Main_DashBoard extends FireBaseActivity {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+        });
+
+        // SEARCH FOOD...
+        MainBinding.searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = MainBinding.searchButton.getText().toString();
+                if(!text.isEmpty())
+                {
+                    Intent intent = new Intent(getApplicationContext(),ListFoodsActivity.class);
+                    intent.putExtra("text",text);
+                    intent.putExtra("isSearch",true);
+                    startActivity(intent);
+                }
+            }
         });
     }
 
