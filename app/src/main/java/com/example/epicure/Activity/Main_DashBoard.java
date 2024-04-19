@@ -100,19 +100,27 @@ public class Main_DashBoard extends FireBaseActivity {
         });
 
         // SEARCH FOOD...
-        MainBinding.searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String text = MainBinding.searchButton.getText().toString();
-                if(!text.isEmpty())
-                {
-                    Intent intent = new Intent(getApplicationContext(),ListFoodsActivity.class);
-                    intent.putExtra("text",text);
-                    intent.putExtra("isSearch",true);
-                    startActivity(intent);
-                }
+        MainBinding.searchBtn.setOnClickListener(view -> {
+            String text = MainBinding.searchButton.getText().toString();
+            if(!text.isEmpty())
+            {
+                Intent intent = new Intent(getApplicationContext(),ListFoodsActivity.class);
+                intent.putExtra("text",text);
+                intent.putExtra("isSearch",true);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(Main_DashBoard.this, "No matches found", Toast.LENGTH_SHORT).show();
             }
         });
+
+        MainBinding.cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),CartActivity.class));
+            }
+        });
+
     }
 
     private void initBestFood() {

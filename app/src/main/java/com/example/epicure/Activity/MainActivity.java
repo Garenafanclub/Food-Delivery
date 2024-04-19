@@ -16,7 +16,7 @@ import com.example.epicure.R;
 public class MainActivity extends FireBaseActivity {
 
     private MainViewModel viewModel;
-    private final int colorChangeInterval = 2000;
+    private final int colorChangeInterval = 1700;
     TextView recipe_button;
     private final Handler handler = new Handler(Looper.getMainLooper());
 

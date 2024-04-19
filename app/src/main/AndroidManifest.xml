@@ -15,9 +15,13 @@
         android:theme="@style/Theme.Epicure.Starting"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.DetailedActivity"
+            android:name=".Activity.CartActivity"
             android:exported="false"
             android:theme="@style/Theme.Epicure"/>
+        <activity
+            android:name=".Activity.DetailedActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Epicure" />
         <activity
             android:name=".Activity.ListFoodsActivity"
             android:exported="false"

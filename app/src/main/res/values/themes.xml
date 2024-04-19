@@ -20,4 +20,13 @@
         <item name="android:navigationBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="textStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/blue_grey</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="totalStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/blue_grey</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

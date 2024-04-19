@@ -24,7 +24,7 @@
             android:layout_gravity="center"
             android:padding="12dp"
             android:background="@drawable/card_1_background"
-            app:srcCompat="@drawable/last_img"
+            app:srcCompat="@drawable/pizza_img"
             tools:ignore="ExtraText" />
 
         <TextView
