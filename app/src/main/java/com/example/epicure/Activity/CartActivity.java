@@ -1,5 +1,6 @@
 package com.example.epicure.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -86,11 +87,10 @@ public class CartActivity extends FireBaseActivity {
             finish();
         });
         
-        binding.placeOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(CartActivity.this, "Incredible taste, confirmed!", Toast.LENGTH_SHORT).show();
-            }
+        binding.placeOrder.setOnClickListener(view -> {
+            Toast.makeText(CartActivity.this, "Incredible taste, confirmed!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(),OrderPlacedActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }
 }
