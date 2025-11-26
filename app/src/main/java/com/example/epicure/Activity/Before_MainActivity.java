@@ -21,8 +21,8 @@ public class Before_MainActivity extends FireBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       binding = ActivityBeforeMainBinding.inflate(getLayoutInflater());
-       setContentView(binding.getRoot());
+        binding = ActivityBeforeMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         Executor executor = ContextCompat.getMainExecutor(this);
 

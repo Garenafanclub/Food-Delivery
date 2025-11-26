@@ -40,6 +40,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.viewholder> {
         return new viewholder(inflate);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.viewholder holder, @SuppressLint("RecyclerView") int position) {
       holder.titleTxt_Cart.setText(list.get(position).getTitle());

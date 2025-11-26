@@ -9,14 +9,15 @@
     tools:context=".Activity.Main_DashBoard">
 
 
-     <ScrollView
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -39,8 +40,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="USER_NAME"
-                    android:textSize="20sp"
                     android:textColor="@color/blue_grey"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@+id/textView5"
                     tools:ignore="MissingConstraints" />
@@ -102,9 +103,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/search_icon"
                         android:layout_marginEnd="4dp"
-                        android:padding="4dp" />
+                        android:padding="4dp"
+                        android:src="@drawable/search_icon" />
                 </LinearLayout>
 
                 <ImageView
@@ -114,8 +115,8 @@
                     android:layout_marginStart="6dp"
                     android:background="@drawable/grey_search_bar_background"
                     android:padding="12dp"
-                    tools:layout_marginStart="6dp"
-                    android:src="@drawable/basket" />
+                    android:src="@drawable/basket"
+                    tools:layout_marginStart="6dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -129,8 +130,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.333"
                     android:layout_marginStart="4dp"
+                    android:layout_weight="0.333"
                     android:background="@drawable/grey_search_bar_background"
                     android:orientation="horizontal">
 
@@ -183,8 +184,8 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_weight="0.3333"
                     android:layout_marginStart="4dp"
+                    android:layout_weight="0.3333"
                     android:background="@drawable/grey_search_bar_background"
                     android:orientation="horizontal">
 
@@ -200,8 +201,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="5dp"
-                        android:background="@null"
                         android:layout_weight="1"
+                        android:background="@null"
                         android:contentDescription="@string/app_name" />
 
                 </LinearLayout>
@@ -210,8 +211,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
@@ -220,18 +221,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Today's Best deal"
                     android:fontFamily="@font/times_new_roman"
+                    android:text="Today's Best deal"
+                    android:textColor="@color/black"
                     android:textSize="22dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="VIEW ALL"
-                    android:textColor="@color/red"/>
+                    android:textColor="@color/red" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -269,10 +270,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:text="Choose Category"
-                android:fontFamily="@font/times_new_roman"
                 android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/times_new_roman"
+                android:text="Choose Category"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -303,6 +304,5 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
